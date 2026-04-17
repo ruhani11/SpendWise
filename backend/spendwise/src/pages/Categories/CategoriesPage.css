@@ -1,0 +1,251 @@
+/* ======================================
+   CATEGORIES PAGE
+====================================== */
+
+.categoriesPage {
+  flex: 1;
+  min-height: 0;          /* 🔥 critical */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 14px;
+}
+/* Header */
+.categoriesHeader {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.categoriesTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.categoriesMuted {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgba(17, 24, 39, 0.72);
+}
+
+/* Card */
+.categoriesCard {
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  border-radius: 16px;
+  padding: 14px;
+  color: #111827;
+  box-shadow: 0 10px 18px rgba(16, 24, 40, 0.06);
+}
+
+/* Make ONLY last card grow */
+.categoriesCard:last-child {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Title */
+.categoriesSectionTitle {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* Form */
+.categoriesForm {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===============================
+   SCROLL AREA (THIS FIXES IT)
+=============================== */
+/* ===============================
+   GRID SYSTEM (UPDATED ONLY)
+=============================== */
+.categoriesList{
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  display: grid;
+  gap: 12px;
+  padding-right: 6px;
+  margin-top: 10px;
+
+  /* ✅ grid system */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  align-content: start; /* prevents stretching */
+}
+
+
+
+/* Scrollbar */
+.categoriesList::-webkit-scrollbar {
+  width: 6px;
+}
+.categoriesList::-webkit-scrollbar-thumb {
+  background: rgba(17, 24, 39, 0.20);
+  border-radius: 10px;
+}
+.categoriesList::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 24, 39, 0.30);
+}
+
+.categoryRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 6px;
+  padding: 12px;
+
+  background: #F6F7F9;
+  border: 1px solid #E3E6EA;
+  border-radius: 14px;
+  transition: 0.18s ease;
+  min-height: 120px;
+  align-items: flex-start;
+}
+
+.categoryRow:hover {
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 10px 18px rgba(16, 24, 40, 0.06);
+}
+
+.categoryLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.categoryName {
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.categoryMeta {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgba(17, 24, 39, 0.65);
+}
+
+.categoryActions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+/* Inputs */
+.input,
+.inputLight {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  outline: none;
+}
+
+.input:focus,
+.inputLight:focus {
+  border-color: rgba(20, 184, 166, 0.55);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.14);
+}
+
+/* Buttons */
+.btnPrimary {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid #14b8a6;
+  background: #14b8a6;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 184, 166, 0.55);
+  color: #0f766e;
+  background: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnGhost {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: transparent;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnDanger {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .categoriesForm {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .categoryActions {
+    justify-content: flex-end;
+  }
+
+  .btnPrimary,
+  .btnSecondary,
+  .btnGhost,
+  .btnDanger {
+    width: 100%;
+  }
+}
+/* ===============================
+   INLINE MESSAGE (above Add Card)
+=============================== */
+.unitMessage{
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 800;
+  font-size: 13px;
+  border: 1px solid rgba(17,24,39,0.12);
+  background: #ffffff;
+  color: #111827;
+}
+.unitMessage.success{
+  border-color: rgba(20,184,166,0.35);
+  background: rgba(20,184,166,0.10);
+  color: #0f766e;
+}
+.unitMessage.error{
+  border-color: rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.10);
+  color: #991b1b;
+}

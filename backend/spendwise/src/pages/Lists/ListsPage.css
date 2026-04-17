@@ -1,0 +1,314 @@
+/* ===============================
+   Theme (3 main colors)
+   1) Cream background
+   2) White cards
+   3) Mint accent
+================================= */
+
+.listsPage {
+  padding: 16px 14px 5px;
+  background: transparent; /* page bg comes from layout */
+}
+
+/* Header */
+.listsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.listsTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.listsMuted {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgba(17, 24, 39, 0.72);
+}
+
+/* Card */
+.listsCard {
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  color: #111827;
+  box-shadow: 0 10px 18px rgba(16, 24, 40, 0.06);
+}
+
+.listsSectionTitle {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 900;
+  color: #111827;
+}
+
+/* Create form */
+.listsForm {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Inputs */
+.input,
+.inputLight {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  color: #111827;
+  outline: none;
+}
+
+.input::placeholder,
+.inputLight::placeholder {
+  color: rgba(17, 24, 39, 0.45);
+}
+
+.input:focus,
+.inputLight:focus {
+  border-color: rgba(20, 184, 166, 0.55);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.14);
+}
+
+/* Buttons (Mint system) */
+.btnPrimary {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid #14b8a6;
+  background: #14b8a6;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.18s ease;
+  white-space: nowrap;
+}
+
+.btnPrimary:hover {
+  filter: brightness(0.96);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 184, 166, 0.55);
+  color: #0f766e;
+  background: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.18s ease;
+  white-space: nowrap;
+}
+
+.btnSecondary:hover {
+  background: rgba(20, 184, 166, 0.08);
+}
+
+.btnGhost {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: transparent;
+  color: rgba(17, 24, 39, 0.85);
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.18s ease;
+  white-space: nowrap;
+}
+
+.btnGhost:hover {
+  background: rgba(17, 24, 39, 0.05);
+}
+
+/* Danger (Delete) */
+.btnDanger {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #fecaca;        /* light red border */
+  background: #fee2e2;              /* soft red background */
+  color: #991b1b;                   /* dark red text */
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnDanger:hover {
+  background: #fecaca;
+}
+
+
+/* ===============================
+   All Lists scroll box
+================================= */
+.listsScrollBox {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.80);
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 44vh;
+}
+
+.listsList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  display: grid;
+  gap: 12px;
+  padding-right: 6px;
+  margin-top: 10px;
+
+  /* ✅ grid system */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  align-content: start;
+}
+
+/* Scrollbar */
+.listsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listsList::-webkit-scrollbar-thumb {
+  background: rgba(17, 24, 39, 0.20);
+  border-radius: 10px;
+}
+
+.listsList::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 24, 39, 0.30);
+}
+
+/* List row */
+.listRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 6px;
+  padding: 12px;
+
+  background: #F6F7F9;
+  border: 1px solid #E3E6EA;
+  border-radius: 14px;
+  transition: 0.18s ease;
+  min-height: 120px;
+  align-items: flex-start;
+}
+.listRow:hover {
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 10px 18px rgba(16, 24, 40, 0.06);
+}
+
+/* Active list highlight (Mint) */
+.listRowActive {
+  background: rgba(20, 184, 166, 0.10);
+  border-color: rgba(20, 184, 166, 0.35);
+  position: relative;
+}
+
+.listRowActive::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background: #14b8a6;
+}
+
+/* Left area */
+.listRowLeft {
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.listName {
+  font-weight: 900;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listMeta {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgba(17, 24, 39, 0.65);
+}
+
+/* Edit budget input wrap */
+.editBudgetWrap {
+  margin-top: 8px;
+}
+
+/* Actions */
+.listActions {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.toastSuccess{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 8px 0 12px;     /* ✅ appears just under header, above Create card */
+  padding: 10px 14px;
+
+  border-radius: 12px;
+  background: rgba(20,184,166,0.95);
+  color: #fff;
+
+  font-weight: 900;
+  font-size: 13px;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+
+/* Responsive */
+@media (max-width: 520px) {
+  .listsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .listRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .listActions {
+    justify-content: flex-end;
+  }
+
+  .btnPrimary,
+  .btnSecondary,
+  .btnGhost,
+  .btnDanger {
+    width: 100%;
+  }
+}
+/* Desktop only: force this page to start from top */
+@media (min-width: 900px) {
+  .listsPage{
+    align-self: flex-start;   /* ✅ breaks parent vertical centering */
+    width: 100%;
+    margin-top: 0;
+  }
+}
